@@ -1,4 +1,4 @@
-# Multi_Armed_Bandit
+# Multi Armed Bandit Study
 A study in the comparison of multi armed bandit strategies including a proof of concept for a machine learning approach
 
 ## Strategy Legend:
