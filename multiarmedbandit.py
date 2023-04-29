@@ -4,6 +4,7 @@ import math
 import network
 
 TRAIN_NEW_MODEL = False
+DECAY_RATE = 0.99
 
 class Bandit:
     def __init__(self,payout,chance):
@@ -89,7 +90,7 @@ def pit(n):
     return b
 
 def train_net(num_trials, evolution_rate, training_bandits, training_plays,max_payout,num_children,num_tests,plot=False):
-    parent = network.network([3,5,5,1])
+    parent = network.network([3,5,5,5,5,1])
     convergence = []
     mean_convergence = []
 
@@ -144,6 +145,9 @@ def train_net(num_trials, evolution_rate, training_bandits, training_plays,max_p
             convergence.append(children_fitness[best_child_idx])
             mean_convergence.append(sum(convergence)/len(convergence))
         
+        # decay evolution
+        evolution_rate *= DECAY_RATE
+
         best_child_idx = pit(children_scores)
         best_child = children[best_child_idx]
         parent = best_child
@@ -179,11 +183,11 @@ def main():
     rewards = [0]*num_bandits
     plays = [0]*num_bandits
     # collect payout of neural net strat
-    num_generations = 10
+    num_generations = 100
     evolution_rate = 0.35
-    training_bandits = 100
+    training_bandits = 50
     training_plays = training_bandits*10
-    generation_size = 5
+    generation_size = 10
     num_tests = 3
 
     if TRAIN_NEW_MODEL:
