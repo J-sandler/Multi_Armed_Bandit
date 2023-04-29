@@ -5,7 +5,7 @@ A study in the comparison of multi armed bandit strategies including a proof of 
 
 This repository references four distinct strategies for the multi armed bandit problem. 
 
-1. Random play (plotted in red)
+1. Random play (plotted in Green)
  - As the name implies this strategy entails choosing random bandits,
  - It is plotted along with the other strategies for comparative purposes
  
@@ -16,7 +16,7 @@ This repository references four distinct strategies for the multi armed bandit p
 3. Upper Confidence Bound Strategy (plotted in yellow)
 - This entails calculating the upper confidence bound for each bandit
 
-4. Neural Network Greedy with Neuro-Evolution (plotted in Green)
+4. Neural Network Greedy with Neuro-Evolution (plotted in Red)
 - This entails evolving a neural network to compute confidence bounds based on available information
 - This is approach is the focus of this repository.
 
