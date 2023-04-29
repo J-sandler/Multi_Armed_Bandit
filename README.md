@@ -39,8 +39,8 @@ This generation is tested in a new multi armed bandit simulation and the best ch
 The strategies were tested in a small validation simulation with 500 timesteps (on the x-axis) against cummulative reward (on the y-axis), shown below...
 
 
-<img width="554" alt="Screen Shot 2023-04-29 at 5 20 06 PM" src="https://user-images.githubusercontent.com/108235294/235324723-7981caf1-8136-4ae4-8855-7b00703bf3ad.png">
 
+<img width="554" alt="Screen Shot 2023-04-29 at 5 20 06 PM" src="https://user-images.githubusercontent.com/108235294/235326979-4f7b77ef-8b1c-4b71-b09d-37a47d033b56.png">
 
 As can be seen above the Neural Network strategy approximated the UCB strategy very closely essentially implying that the neural network found that the optimal solution given its inputs was to approximate the UCB algorithm.
 
