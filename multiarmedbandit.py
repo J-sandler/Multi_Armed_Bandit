@@ -165,7 +165,7 @@ def train_net(num_trials, evolution_rate, training_bandits, training_plays,max_p
                     
 
 def main():
-    num_bandits,max_payout,max_plays = 50,100,500
+    num_bandits,max_payout,max_plays = 50,100,5000
 
     mab1 = MAB(num_bandits,max_payout,max_plays)
 
