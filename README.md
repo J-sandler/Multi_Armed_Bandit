@@ -24,7 +24,7 @@ This repository references four distinct strategies for the multi armed bandit p
 
 - Intuition: 
 
-The intuition for this strategy is that the optimal greedy algorithm for the multi armed bandit problem (if such a thing is presumed to exist) would be a function of all the available information during the simulation. The available information in this problem consists of *the time step/number of plays*, *the number of plays per bandit* and *the reward per bandit*. We can therfore use the as inputs to a neural network where the output is a score that will be used as our greedy choice. The simplest method for training a neural network to do this succesfully is to engage in genetic neuro-evolution across a number of simulations. 
+The intuition for this strategy is that the optimal greedy algorithm for the multi armed bandit problem (if such a thing is presumed to exist) would be a function of all the available information during the simulation. The available information in this problem consists of **the time step/number of plays**, **the number of plays per bandit** and **the reward per bandit**. We can therfore use the as inputs to a neural network where the output is a score that will be used as our greedy choice. The simplest method for training a neural network to do this succesfully is to engage in genetic neuro-evolution across a number of simulations. 
 
 - Methods:
 
