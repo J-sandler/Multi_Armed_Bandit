@@ -18,7 +18,7 @@ This repository references four distinct strategies for the multi armed bandit p
 
 4. Neural Network Greedy with Neuro-Evolution (plotted in Green)
 - This entails evolving a neural network to compute confidence bounds based on available information
-- This is the focus of the repository.
+- This is approach is the focus of this repository.
 
 ## Neuro Evolution Methodoloy:
 
