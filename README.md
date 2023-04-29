@@ -27,6 +27,7 @@ This repository references four distinct strategies for the multi armed bandit p
 The intuition for this strategy is that the optimal greedy algorithm for the multi armed bandit problem (if such a thing is presumed to exist) would be a function of all the available information during the simulation. The available information in this problem consists of *the time step/number of plays*, *the number of plays per bandit* and *the reward per bandit*. We can therfore use the as inputs to a neural network where the output is a score that will be used as our greedy choice. The simplest method for training a neural network to do this succesfully is to engage in genetic neuro-evolution across a number of simulations. 
 
 - Methods:
+
 During the simulation stage a random parent neural network is instantiated. A set of children are evolved from this parent with a mutation rate (initialized to 35% or 0.35) that is used to linearly augment the weights and biases of the children in a randomized manner. 
 
 This generation is tested in a new multi armed bandit simulation and the best child becomes the parent for the next generation. After all generations have been tested the final parent is saved and returned. 
