@@ -12,7 +12,7 @@ class Bandit:
         self.chance = chance
     
     def play(self):
-        if (random.randint(0,100)/100) <= self.chance:
+        if (random.randint(0,100)) <= self.chance:
             return self.payout
         return 0
     
@@ -57,7 +57,7 @@ def Q(reward,n):
     return reward/n
 
 def select_bandit(tmab,child,rewards,plays,time,log=False):
-    mx_score = -1
+    mx_score = -float('inf')
     best_bandit = -1
     scores = []
 
@@ -165,7 +165,7 @@ def train_net(num_trials, evolution_rate, training_bandits, training_plays,max_p
                     
 
 def main():
-    num_bandits,max_payout,max_plays = 50,100,5000
+    num_bandits,max_payout,max_plays = 100,100,1000
 
     mab1 = MAB(num_bandits,max_payout,max_plays)
 
@@ -188,7 +188,7 @@ def main():
     training_bandits = 50
     training_plays = training_bandits*10
     generation_size = 10
-    num_tests = 3
+    num_tests = 5
 
     if TRAIN_NEW_MODEL:
         net = train_net(num_generations,evolution_rate,training_bandits,training_plays,max_payout,generation_size,num_tests)
@@ -232,6 +232,7 @@ def main():
 
         choice = select_bandit(mab1,net,rewards,plays,i)
         rew = mab1.play(choice)
+        print(mab1.bandits[choice].chance,mab1.bandits[choice].payout)
         net_payout  += rew
         nets.append(net_payout)
         rewards[choice] += rew
